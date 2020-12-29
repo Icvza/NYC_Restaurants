@@ -10,15 +10,15 @@ class CLI
     end
 
     def main_menu
-        puts "To see a list of all restaurants type List "
+        puts "To see a list of all restaurants type list "
         blankspace
-        puts "To search for a restaurant by name enter Search"
+        puts "To search for a restaurant by name enter search"
         blankspace
         puts "To leave type exit"
         blankspace
         selection = user_input
 
-        if selection == "List"
+        if selection == "list"
             option_1
         elsif selection == "search"
             option_2
@@ -57,6 +57,7 @@ class CLI
         blankspace
         restaurant.each do |attribute|
             puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            blankspace
             puts "Name: #{attribute.dba}"
             blankspace
             puts "Street: #{attribute.street}"
@@ -65,6 +66,7 @@ class CLI
             blankspace
             if attribute.grade == nil
                 puts "Grade: Sorry there is no grade avaliable at this time"
+                blankspace
                 puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
             else attribute.grade == true
                 puts "Grade: #{attribute.grade}"
@@ -85,7 +87,9 @@ class CLI
     end
 
     def invalid
-        puts "your input was invalid, please try again"
+        blankspace
+        puts "Your input was invalid, please try again"
+        blankspace
         main_menu
     end
 
