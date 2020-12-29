@@ -61,11 +61,16 @@ class CLI
             blankspace
             puts "Street: #{attribute.street}"
             blankspace
-            puts "Grade: #{attribute.grade}"
-            blankspace
             puts "Violation: #{attribute.violation_description}"
             blankspace
+            if attribute.grade == nil
+                puts "Grade: Sorry there is no grade avaliable at this time"
+                puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            else attribute.grade == true
+                puts "Grade: #{attribute.grade}"
+            blankspace
             puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            end
         end
     end
 
