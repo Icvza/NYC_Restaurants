@@ -1,0 +1,25 @@
+NYC Resturant CLI Grade - Violations app
+ 
+ Greets User and gives user a list of options to choose from
+   
+   1: List[1] - Lists names of all Resturants avalible in the NYC API data endpoint along with 
+                an index number and a street name.  ex "41. Panda express 185th st"
+    * Can select the index number of the Resturant to display: Grade Letter and NYC violations 
+        * Can input another idex, list, or go back to the main menu 
+   
+   2: Search[2] - Allows users to search for a Resturant with included letters    ex input  = " p, a, n, d"
+    * gives out clear instructions on how to input the desired Resturant
+        2.1 - Gives a list off all Resturant with included letters along with index and street name 
+            * if none found allows user to re input the search 
+                * one or multiple options should show 
+                    * select Resturant index for Resturant information 
+                        *automatily returns to menu
+
+   3: Exit[3] - exits the CLI APP 
+
+
+    
+    
+    * figure out if Resturant name must be case sensitive
+     
+    
