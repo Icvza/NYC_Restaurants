@@ -2,7 +2,7 @@
 require 'pry'
 class CLI
     include Style
- 
+    include Option_one
     def start
         blankspace
         puts "Hello foodie! This is a tool that lets you know a restaurant's grade and violation's located in New York City."
@@ -31,24 +31,6 @@ class CLI
         end
     end
 
-    def option_1
-        blankspace
-        restaurant_list
-        blankspace
-        puts "TYPE IN THE NUMBER NEXT TO THE RESTURANT TO VIEW ITS FULL PROFILE OTHERWISE TYPE 0 FOR MAIN MENU"
-        blankspace
-        selection = user_input
-        @input = selection.to_i 
-        if @input == 0
-            puts "Taking you back to the main menu either because you entered 0 or your typed something invalid" 
-            main_menu
-        else @input >= 1
-            find_by_index(@input)
-        end 
-        blankspace
-        main_menu
-    end
-
     def find_by_index(input)
         @selected_restaurant = []
         @selected_restaurant << Restaurant.all[input-1] 
@@ -58,7 +40,7 @@ class CLI
     def restaurant_details(restaurant)
         blankspace
         restaurant.each do |attribute|
-            puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            ui_line
             blankspace
             puts "Name: #{attribute.dba}"
             blankspace
@@ -69,11 +51,11 @@ class CLI
             if attribute.grade == nil
                 puts "Grade: Sorry there is no grade avaliable at this time"
                 blankspace
-                puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                ui_line
             else attribute.grade == true
                 puts "Grade: #{attribute.grade}"
             blankspace
-            puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            ui_line
             end
         end
     end
@@ -96,7 +78,15 @@ class CLI
     end
 
     def option_2 
-        puts "option 2"
+        puts "INSTRUCTIONS BETA"
+        search_by_name = user_input
+        search_result = []
+        search_result << Restaurant.all.select do |restaurant|
+            restaurant.dba = search_by_name
+        end
+
+        puts "#{search_result}"
+    # binding.pry
     end
 
     def goodbye

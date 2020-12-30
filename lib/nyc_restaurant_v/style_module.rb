@@ -1,6 +1,4 @@
 module Style
-
-
     def blankspace
         puts " "
     end
@@ -8,6 +6,4 @@ module Style
     def ui_line
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     end
-
-    
 end

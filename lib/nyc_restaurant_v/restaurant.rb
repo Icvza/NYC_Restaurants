@@ -19,7 +19,4 @@ class Restaurant
         @@all
     end
 
-
-
-
 end
