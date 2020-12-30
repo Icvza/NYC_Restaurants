@@ -1,4 +1,3 @@
-
 require 'pry'
 class CLI
     include Style
@@ -78,15 +77,13 @@ class CLI
     end
 
     def option_2 
-        puts "INSTRUCTIONS BETA"
-        search_by_name = user_input
+        puts "TYPE IN THE NAME OF THE RESTAURANT THAT YOU WOULD LIKE TO KNOW MORE ABOUT"
+        original_input = user_input
+        search_by_name = original_input.upcase
         search_result = []
-        search_result << Restaurant.all.select do |restaurant|
-            restaurant.dba = search_by_name
-        end
-
-        puts "#{search_result}"
-    # binding.pry
+        # search_result << Restaurant.all.select { |restaurant| restaurant.dba.include?(search_by_name) }
+    #  binding.pry
+        Restaurant.test(search_by_name)
     end
 
     def goodbye

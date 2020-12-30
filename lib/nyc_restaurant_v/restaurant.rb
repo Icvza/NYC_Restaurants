@@ -19,4 +19,18 @@ class Restaurant
         @@all
     end
 
+    # def self.search_result_list(search_list)
+    #     search_result.each do |resturant|
+    #         resturant.each.with_index(0) do |attributes, i|
+    #         puts "#{i=1} - #{attributes.dba} - #{attributes.street}"
+    #         end
+    #     end
+    # end
+    
+    def self.test(something)
+     puts 'me'
+     binding.pry
+    end
+
+
 end
