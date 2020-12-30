@@ -1,7 +1,9 @@
+
 require 'pry'
 class CLI
+    include Style
  
-    def start 
+    def start
         blankspace
         puts "Hello foodie! This is a tool that lets you know a restaurant's grade and violation's located in New York City."
         blankspace
@@ -95,10 +97,6 @@ class CLI
 
     def option_2 
         puts "option 2"
-    end
-    
-    def blankspace
-        puts " "
     end
 
     def goodbye
