@@ -9,6 +9,7 @@ class Restaurant
             self.send("#{k}=", v) if self.respond_to?("#{k}=", v)
         end
         save
+        @dba = dba
     end
 
     def save 
@@ -19,13 +20,7 @@ class Restaurant
         @@all
     end
 
-    def self.find_by_dba(search_by_name)
-        Restaurant.all.each.with_index(0) do |resturant, i|
-            Restaurant.all[i].dba
-        end
-        binding.pry
-    end
-
-    # .include?(search_by_name)
-
 end
+
+
+
