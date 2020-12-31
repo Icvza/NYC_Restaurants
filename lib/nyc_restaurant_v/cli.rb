@@ -2,6 +2,7 @@ require 'pry'
 class CLI
     include Style
     include Option_one
+    include Option_two
     def start
         blankspace
         puts "Hello foodie! This is a tool that lets you know a restaurant's grade and violation's located in New York City."
@@ -76,20 +77,11 @@ class CLI
         main_menu
     end
 
-    def option_2 
-        puts "TYPE IN THE NAME OF THE RESTAURANT THAT YOU WOULD LIKE TO KNOW MORE ABOUT"
-        original_input = user_input
-        search_by_name = original_input.upcase
-        search_result = []
-        # search_result << Restaurant.all.select { |restaurant| restaurant.dba.include?(search_by_name) }
-    #  binding.pry
-        Restaurant.test(search_by_name)
-    end
-
     def goodbye
         blankspace
         puts"Till next meal, goodbye!"
         blankspace
     end
+    
 end
 
