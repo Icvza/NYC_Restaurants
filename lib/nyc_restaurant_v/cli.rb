@@ -19,7 +19,6 @@ class CLI
         puts "To leave type exit"
         blankspace
         selection = user_input
-
         if selection == "list"
             option_1
         elsif selection == "search"
