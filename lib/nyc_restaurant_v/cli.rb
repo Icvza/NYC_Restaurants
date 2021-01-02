@@ -5,7 +5,7 @@ class CLI
     include Option_two
     def start
         blankspace
-        puts "Hello foodie! This is a tool that lets you know a restaurant's grade and violation's located in New York City."
+        puts "Hello foodie! This gem lets you know a restaurant's grade and violations in New York City."
         blankspace
         API.get_data
         main_menu
@@ -31,9 +31,16 @@ class CLI
     end
 
     def find_by_index(input)
+        if Restaurant.all[input] == nil
+            blankspace
+            puts "Invalid number please try again"
+            blankspace
+        else 
         @selected_restaurant = []
-        @selected_restaurant << Restaurant.all[input-1] 
+        @selected_restaurant << Restaurant.all[input-1]
+        binding.pry
         restaurant_details(@selected_restaurant)
+        end
     end
 
     def restaurant_details(restaurant)

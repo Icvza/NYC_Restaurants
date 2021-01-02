@@ -10,10 +10,14 @@ module Option_two
         x = Restaurant.all.each.with_index(0) { |resturant, i| Restaurant.all[i].dba }
         x.select {|y| y.dba}
         f = x.select {|y| y.dba}
-        f = x.select {|y| y.dba}
         result = f.select {|dba| dba.dba.include?(search_by_name)}  
         if result.size == 1
             restaurant_details(result)
+        elsif result.size == 0 
+            blankspace
+            puts "THE RESTAURANT YOU ARE LOOKING FOR IS CURRENTLY NOT IN THE 1000 RESTAURANT LIMIT IN THIS GEM PLEASE TRY AGAIN"
+            blankspace
+            main_menu
         else result.size > 1
             result.each.with_index(0) do |resturant, i|
                 puts "#{i+1} - #{resturant.dba} - #{resturant.street}"

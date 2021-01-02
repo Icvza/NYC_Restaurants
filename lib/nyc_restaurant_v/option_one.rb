@@ -10,7 +10,6 @@ module Option_one
         @input = selection.to_i 
         if @input == 0
             puts "Taking you back to the main menu either because you entered 0 or your typed something invalid" 
-            main_menu
         else @input >= 1
             find_by_index(@input)
         end 
