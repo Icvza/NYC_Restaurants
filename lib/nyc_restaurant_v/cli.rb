@@ -38,7 +38,6 @@ class CLI
         else 
         @selected_restaurant = []
         @selected_restaurant << Restaurant.all[input-1]
-        binding.pry
         restaurant_details(@selected_restaurant)
         end
     end

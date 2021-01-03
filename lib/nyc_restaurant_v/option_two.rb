@@ -34,8 +34,12 @@ module Option_two
             main_menu
         else @input >= 1
             @selected_restaurant = []
-            @selected_restaurant << result[@input-1] 
+            @selected_restaurant << result[@input-1]
+            if @selected_restaurant.include?(nil) 
+                puts"INVALID NUMBER TRY AGAIN"
+            else 
             restaurant_details(@selected_restaurant)
+            end
         end 
         blankspace
         main_menu
