@@ -31,7 +31,6 @@ module Option_two
             blankspace
             puts "Taking you back to the main menu either because you entered 0 or your typed something invalid"
             blankspace
-            main_menu
         else @input >= 1
             @selected_restaurant = []
             @selected_restaurant << result[@input-1]
